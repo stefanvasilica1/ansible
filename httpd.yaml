@@ -1,0 +1,11 @@
+---
+- host: all
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+    - name: Create index.html
+      copy:
+        path: /var/www/html/index.html
+        content: "Hello from GitHub"
